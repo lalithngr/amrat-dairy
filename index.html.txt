@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AMRAT DAIRY</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>AMRAT DAIRY</h1>
+
+<p>Fresh & Pure Milk From Village Dairy</p>
+
+</header>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Products</a>
+<a href="#">Contact</a>
+
+</nav>
+
+<section class="hero">
+
+<h2>Fresh & Pure Milk</h2>
+
+<p>100% Natural Milk Directly From Our Dairy Plant</p>
+
+</section>
+
+<section class="about">
+
+<h2>About AMRAT DAIRY</h2>
+
+<p>
+
+AMRAT DAIRY is located in  
+Village Jirauli, District Bulandshahr, Uttar Pradesh.
+
+We provide fresh and pure milk to nearby areas with hygiene and quality.
+
+</p>
+
+</section>
+
+<section class="products">
+
+<h2>Our Products</h2>
+
+<div class="card">
+
+<h3>Fresh Milk</h3>
+
+<p>100% Pure Milk</p>
+
+</div>
+
+<div class="card">
+
+<h3>More Products</h3>
+
+<p>Coming Soon</p>
+
+</div>
+
+</section>
+
+<section class="contact">
+
+<h2>Contact Us</h2>
+
+<p>
+
+Village - Jirauli<br>
+District - Bulandshahr<br>
+Uttar Pradesh
+
+</p>
+
+<p>
+
+📞 +91 9999999999<br>
+📞 +91 9999999999
+
+</p>
+
+<a class="whatsapp" href="https://wa.me/919761154079">
+
+Chat on WhatsApp
+
+</a>
+
+</section>
+
+<footer>
+
+<p>© 2026 AMRAT DAIRY</p>
+
+</footer>
+
+</body>
+</html>#80FF00#6AC70A   
