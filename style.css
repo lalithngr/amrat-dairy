@@ -350,3 +350,33 @@ font-size:16px;
 .logo img{
 height:45px;
   }
+
+.menu-toggle{
+display:none;
+font-size:28px;
+color:white;
+cursor:pointer;
+}
+
+@media (max-width:768px){
+
+.nav-links{
+display:none;
+flex-direction:column;
+background:#e60000;
+position:absolute;
+top:70px;
+right:0;
+width:200px;
+padding:20px;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.menu-toggle{
+display:block;
+}
+
+                            }
