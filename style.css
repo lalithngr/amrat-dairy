@@ -233,3 +233,23 @@ box-shadow:0 10px 25px rgba(0,0,0,0.2);
 width:80px;
 margin-bottom:10px;
 }
+.products{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:30px;
+padding:40px;
+}
+
+.product-card{
+width:250px;
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+text-align:center;
+  }
+.product-img{
+width:120px;
+margin-bottom:15px;
+  }
