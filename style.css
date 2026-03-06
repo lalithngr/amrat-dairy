@@ -326,3 +326,27 @@ font-size:18px;
 .logo img{
 height:45px;
   }
+.header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:#e60000;
+padding:10px 20px;
+}
+
+.nav-links{
+display:flex;
+flex-direction:row;
+gap:20px;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+font-size:16px;
+}
+
+.logo img{
+height:45px;
+  }
