@@ -1,12 +1,24 @@
 <!DOCTYPE html><html>
-<head><title>AMRAT DAIRY</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="style.css"></head><body><header class="header"><div class="logo">
+<head><title>AMRAT DAIRY</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="style.css"></head><body>
+
+  <header class="header">
+
+<div class="logo">
 <img src="logo.png">
-</div><div class="menu-toggle" onclick="toggleMenu()">☰</div><nav class="nav-links" id="navLinks">
+</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<nav class="nav-links" id="navLinks">
 <a href="#">Home</a>
 <a href="#products">Products</a>
 <a href="#delivery">Delivery</a>
 <a href="#contact">Contact</a>
-</nav></header><section class="hero"><div class="hero-content"><img src="lalit.jpg" class="owner-photo"><h1>AMRAT DAIRY</h1><p>Fresh & Pure Milk Directly From Our Village Dairy</p><a href="https://wa.me/919999999999" class="btn">
+</nav>
+
+  </header>
+  
+  <section class="hero"><div class="hero-content"><img src="lalit.jpg" class="owner-photo"><h1>AMRAT DAIRY</h1><p>Fresh & Pure Milk Directly From Our Village Dairy</p><a href="https://wa.me/919999999999" class="btn">
 Order Milk on WhatsApp
 </a></div></section><section id="products" class="products"><div class="product-card"><img src="milk.png" class="product-img"><h3>Fresh Milk</h3>
 <p class="price">₹60 / Litre</p></div><div class="product-card"><img src="ghee.png" class="product-img"><h3>Desi Ghee</h3>
@@ -16,12 +28,13 @@ Order Milk on WhatsApp
 <p>📞 9999999999</p></section><footer>© 2026 AMRAT DAIRY
 
 </footer>
+
   <script>
 function toggleMenu(){
 var menu=document.getElementById("navLinks");
 menu.classList.toggle("active");
 }
-</script>
+  </script>
 
 </body>  
 </html>
