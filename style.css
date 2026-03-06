@@ -193,7 +193,8 @@ color:white;
 }
 
 .logo img{
-height:80px;
+height:60px;
+background:transparent;
 }
 
 nav a{
@@ -369,4 +370,10 @@ display:flex;
 padding:10px 0;
 }
 
+  }
+.logo{
+background:transparent;
+                     }
+.header{
+background:#e60000;
   }
