@@ -15,15 +15,17 @@
 <header class="header">
 
 <div class="logo">
-<img src="logo.png" alt="Amrat Dairy Logo">
+<img src="logo.png">
 </div>
 
-<nav>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<div class="nav-links" id="navLinks">
 <a href="#">Home</a>
-<a href="#">Products</a>
-<a href="#">Delivery</a>
-<a href="#">Contact</a>
-</nav>
+<a href="#products">Products</a>
+<a href="#delivery">Delivery</a>
+<a href="#contact">Contact</a>
+</div>
 
 </header>
 
@@ -115,12 +117,6 @@ Order Milk on WhatsApp
 
   </header>
   
-  <script>
-function toggleMenu(){
-var menu=document.getElementById("navLinks");
-menu.classList.toggle("active");
-}
-  </script>
 
 
   
@@ -130,5 +126,12 @@ menu.classList.toggle("active");
 
 </footer>
 
+  <script>
+function toggleMenu(){
+var menu=document.getElementById("navLinks");
+menu.classList.toggle("active");
+}
+  </script>
+  
 </body>
   </html>
