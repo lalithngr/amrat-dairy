@@ -97,8 +97,25 @@ Order Milk on WhatsApp
 <p>📞 9999999999</p>
 
 </section>
+<div class="menu-toggle" onclick="toggleMenu()">
+☰
+</div>
 
+<div class="nav-links" id="navLinks">
+<a href="#">Home</a>
+<a href="#products">Products</a>
+<a href="#delivery">Delivery</a>
+<a href="#contact">Contact</a>
+  </div>
 
+  <script>
+function toggleMenu(){
+var menu = document.getElementById("navLinks");
+menu.classList.toggle("active");
+}
+  </script>
+
+  
 <footer>
 
 © 2026 AMRAT DAIRY
