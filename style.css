@@ -183,3 +183,22 @@ opacity:1;
 transform:translateY(0);
 }
   }
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:#e60000;
+color:white;
+}
+
+.logo img{
+height:60px;
+}
+
+nav a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+font-weight:bold;
+  }
