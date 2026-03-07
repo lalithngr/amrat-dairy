@@ -157,3 +157,13 @@ color:#000;
 color:#222;
   }
                            }
+.cow{
+position:absolute;
+left:20px;
+bottom:0;
+width:200px;
+}
+
+.hero{
+position:relative;
+  }
