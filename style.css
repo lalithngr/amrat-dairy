@@ -366,3 +366,80 @@ width:75%;
 *{
 box-sizing:border-box;
   }
+
+.cow{
+position:absolute;
+bottom:20px;
+left:-150px;
+width:140px;
+
+animation:cowMove 18s linear infinite;
+}
+
+@keyframes cowMove{
+
+0%{
+left:-150px;
+transform:scaleX(1);
+}
+
+50%{
+left:60%;
+transform:scaleX(1);
+}
+
+51%{
+transform:scaleX(-1);
+}
+
+100%{
+left:-150px;
+transform:scaleX(-1);
+}
+
+}
+
+.cow{
+animation:cowMove 18s linear infinite,
+cowStep 0.5s infinite alternate;
+}
+
+@keyframes cowStep{
+
+0%{
+transform:translateY(0);
+}
+
+100%{
+transform:translateY(-6px);
+}
+
+  }
+
+  .grass{
+
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+height:120px;
+
+background:url("grass.png") repeat-x;
+
+background-size:contain;
+
+animation:grassMove 20s linear infinite;
+
+}
+
+@keyframes grassMove{
+
+0%{
+background-position:0 0;
+}
+
+100%{
+background-position:1000px 0;
+}
+
+  }
