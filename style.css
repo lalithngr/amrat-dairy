@@ -269,3 +269,46 @@ transition:0.4s;
 .product:hover img{
 transform:scale(1.2);
   }
+
+/* Mobile Menu */
+
+#menu{
+position:fixed;
+top:0;
+right:-100%;
+width:70%;
+height:100vh;
+
+background:linear-gradient(135deg,#1f1f1f,#3a3a3a);
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+transition:0.4s;
+z-index:999;
+}
+
+#menu a{
+
+color:white;
+text-decoration:none;
+font-size:22px;
+margin:20px 0;
+
+}
+
+#menu.show{
+
+right:0;
+
+  }
+
+.menu-toggle{
+
+font-size:30px;
+color:white;
+cursor:pointer;
+
+  }
