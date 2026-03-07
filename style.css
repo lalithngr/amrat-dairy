@@ -443,3 +443,65 @@ background-position:1000px 0;
 }
 
   }
+
+.cow{
+position:absolute;
+bottom:20px;
+left:-150px;
+width:140px;
+
+animation:cowWalk 18s linear infinite,
+cowStep 0.4s infinite alternate;
+}
+
+/* cow moving left to right */
+
+@keyframes cowWalk{
+
+0%{
+left:-150px;
+}
+
+100%{
+left:100%;
+}
+
+}
+
+/* step effect */
+
+@keyframes cowStep{
+
+0%{
+transform:translateY(0);
+}
+
+100%{
+transform:translateY(-6px);
+}
+
+  }
+.grass{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+height:120px;
+
+background:url("grass.png") repeat-x;
+background-size:contain;
+
+animation:grassMove 15s linear infinite;
+}
+
+@keyframes grassMove{
+
+0%{
+background-position:0 0;
+}
+
+100%{
+background-position:1000px 0;
+}
+
+  }
