@@ -157,26 +157,4 @@ color:#000;
 color:#222;
   }
                            }
-.cow{
-position:absolute;
-left:0;
-bottom:0;
-width:300px;
-z-index:1;
-opacity:0.9;
-}
 
-.hero{
-position:relative;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-}
-
-.hero-text{
-position:relative;
-z-index:2;
-max-width:600px;
-margin:auto;
-}
