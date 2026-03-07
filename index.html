@@ -18,16 +18,16 @@
 <img src="logo.png">
 </div>
 
-<nav class="nav">
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+<nav id="menu">
+
 <a href="#">Home</a>
 <a href="#about">About</a>
 <a href="#products">Products</a>
 <a href="#contact">Contact</a>
-</nav>
 
-<div class="phone">
-+91 9761154079
-</div>
+</nav>
 
 </header>
 
@@ -116,6 +116,14 @@ WhatsApp Us
 © 2026 AMRAT DAIRY
 
 </footer>
+<script>
 
+function toggleMenu(){
+var menu=document.getElementById("menu");
+menu.classList.toggle("show");
+}
+
+            </script>
+  
 </body>
   </html>
