@@ -106,3 +106,44 @@ color:white;
 text-align:center;
 padding:15px;
 }
+
+.menu-icon{
+display:none;
+font-size:30px;
+cursor:pointer;
+color:white;
+}
+
+#menu a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-weight:bold;
+}
+
+@media(max-width:768px){
+
+.menu-icon{
+display:block;
+}
+
+#menu{
+display:none;
+flex-direction:column;
+position:absolute;
+top:70px;
+right:0;
+background:#e60000;
+width:200px;
+padding:20px;
+}
+
+#menu.show{
+display:flex;
+}
+
+#menu a{
+margin:10px 0;
+}
+
+                           }
