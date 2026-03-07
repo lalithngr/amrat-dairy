@@ -314,3 +314,55 @@ cursor:pointer;
 
   }
 
+/* MOBILE FIX */
+
+@media (max-width:768px){
+
+body{
+overflow-x:hidden;
+}
+
+.hero{
+padding:20px;
+text-align:center;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.owner-photo{
+width:120px;
+height:120px;
+}
+
+.products{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.product{
+width:90%;
+margin:15px auto;
+}
+
+.cow{
+width:120px;
+left:10px;
+bottom:20px;
+}
+
+#menu{
+width:75%;
+}
+
+                }
+
+*{
+box-sizing:border-box;
+  }
