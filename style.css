@@ -145,5 +145,15 @@ display:flex;
 #menu a{
 margin:10px 0;
 }
+.hero h1{
+color:#000;
+}
 
+.hero h2{
+color:#000;
+}
+
+.hero p{
+color:#222;
+  }
                            }
