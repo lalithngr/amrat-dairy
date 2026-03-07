@@ -157,4 +157,23 @@ color:#000;
 color:#222;
   }
                            }
-
+.hero{
+width:100%;
+height:500px;
+background:url("milk.jpg") center/cover no-repeat;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+  }
+.hero-text{
+max-width:600px;
+color:black;
+z-index:2;
+  }
+body{
+margin:0;
+overflow-x:hidden;
+font-family:Arial;
+  }
