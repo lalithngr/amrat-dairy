@@ -548,3 +548,47 @@ transform:translateY(-5px);
 box-shadow:0 15px 40px rgba(0,0,0,0.2);
 
   }
+.delivery{
+padding:60px 20px;
+text-align:center;
+background:#f5f5f5;
+}
+
+.delivery h2{
+font-size:28px;
+margin-bottom:25px;
+}
+
+.delivery-form{
+max-width:400px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.delivery-form input,
+.delivery-form select{
+
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:16px;
+
+}
+
+.delivery-form button{
+
+padding:12px;
+background:#2e7d32;
+color:white;
+border:none;
+border-radius:25px;
+font-size:16px;
+cursor:pointer;
+
+}
+
+.delivery-form button:hover{
+background:#1b5e20;
+  }
