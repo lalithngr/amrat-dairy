@@ -104,27 +104,34 @@ quality and hygiene.
 
 </section>
 
-<form id="orderForm">
+<section class="order-section">
 
-<input type="text" id="name" placeholder="Your Name" required>
+<h2>Milk Delivery Order</h2>
 
-<input type="tel" id="phone" placeholder="Phone Number" required>
+<form class="order-form">
 
-<input type="text" id="address" placeholder="Address" required>
+<input type="text" placeholder="Your Name" required>
 
-<select id="product">
+<input type="tel" placeholder="Phone Number" required>
+
+<input type="text" placeholder="Address" required>
+
+<select>
+<option>Select Product</option>
 <option>Fresh Milk</option>
 <option>Desi Ghee</option>
 <option>Paneer</option>
 </select>
 
-<select id="quantity">
+<select>
+<option>Select Quantity</option>
 <option>1 Litre</option>
 <option>2 Litre</option>
 <option>5 Litre</option>
 </select>
 
-<select id="subscription">
+<select>
+<option>Subscription</option>
 <option>One Time Order</option>
 <option>Daily Delivery</option>
 <option>Alternate Day</option>
@@ -133,7 +140,13 @@ quality and hygiene.
 
 <button type="button" onclick="sendOrder()">Place Order</button>
 
-  </form>
+  <a href="upi://pay?pa=lalitnagar@ptyes&pn=AMRAT%20DAIRY&cu=INR" class="upi-pay">
+Pay via UPI
+  </a>
+  
+</form>
+
+  </section>
 
 <section id="contact" class="contact">
 
