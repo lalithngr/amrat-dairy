@@ -104,37 +104,36 @@ quality and hygiene.
 
 </section>
 
-<section id="delivery" class="delivery">
+<form id="orderForm">
 
-<h2>Milk Delivery Request</h2>
+<input type="text" id="name" placeholder="Your Name" required>
 
-<form class="delivery-form">
+<input type="tel" id="phone" placeholder="Phone Number" required>
 
-<input type="text" placeholder="Your Name" required>
+<input type="text" id="address" placeholder="Address" required>
 
-<input type="tel" placeholder="Phone Number" required>
-
-<input type="text" placeholder="Address" required>
-
-<select required>
-<option value="">Select Product</option>
+<select id="product">
 <option>Fresh Milk</option>
 <option>Desi Ghee</option>
 <option>Paneer</option>
 </select>
 
-<select required>
-<option value="">Quantity</option>
+<select id="quantity">
 <option>1 Litre</option>
 <option>2 Litre</option>
 <option>5 Litre</option>
 </select>
 
-<button type="submit">Order Now</button>
+<select id="subscription">
+<option>One Time Order</option>
+<option>Daily Delivery</option>
+<option>Alternate Day</option>
+<option>Weekly</option>
+</select>
 
-</form>
+<button type="button" onclick="sendOrder()">Place Order</button>
 
-  </section>
+  </form>
 
 <section id="contact" class="contact">
 
@@ -194,6 +193,35 @@ document.getElementById("popup").style.display="none";
 }
 
 </script>
+<script>
 
+function sendOrder(){
+
+var name=document.getElementById("name").value
+var phone=document.getElementById("phone").value
+var address=document.getElementById("address").value
+var product=document.getElementById("product").value
+var quantity=document.getElementById("quantity").value
+var subscription=document.getElementById("subscription").value
+
+var orderID="AMRAT"+Math.floor(Math.random()*10000)
+
+var message="New Milk Order%0A%0A"
++"Order ID: "+orderID+"%0A"
++"Name: "+name+"%0A"
++"Phone: "+phone+"%0A"
++"Product: "+product+"%0A"
++"Quantity: "+quantity+"%0A"
++"Subscription: "+subscription+"%0A"
++"Address: "+address
+
+var url="https://wa.me/919761154079?text="+message
+
+window.open(url,"_blank")
+
+}
+
+  </script>
+  
 </body>
   </html>
