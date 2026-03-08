@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMRAT DAIRY</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Amrat Dairy Logo" onerror="this.style.display='none';">
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav id="menu">
+            <div class="close-btn" onclick="toggleMenu()">✕</div>
+            <a href="#" onclick="toggleMenu()">Home</a>
+            <a href="#about" onclick="toggleMenu()">About</a>
+            <a href="#products" onclick="toggleMenu()">Products</a>
+            <a href="#order" onclick="toggleMenu()">Order Now</a>
+            <a href="#contact" onclick="toggleMenu()">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>AMRAT DAIRY</h1>
+            <p>Fresh & Pure Milk Directly From Our Village Dairy</p>
+            <a href="#order" class="btn">Place Order</a>
+        </div>
+        <div class="grass"></div>
+        <img src="cow.png" class="cow" alt="Cow" onerror="this.style.display='none';">
+    </section>
+
+    <section id="about" class="about">
+        <h2>About AMRAT DAIRY</h2>
+        <div class="about-card">
+            <p>
+                AMRAT DAIRY is a local dairy plant located in Village Jirauli,
+                District Bulandshahr, Uttar Pradesh.
+                We provide fresh and pure milk to nearby areas with
+                quality and hygiene.
+            </p>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <h2>Our Products</h2>
+        <div class="products-container">
+            <div class="product">
+                <img src="milk.png" alt="Milk" onerror="this.style.display='none';">
+                <h3>Fresh Milk</h3>
+                <p>₹60 / Litre</p>
+            </div>
+            <div class="product">
+                <img src="ghee.png" alt="Ghee" onerror="this.style.display='none';">
+                <h3>Desi Ghee</h3>
+                <p>Coming Soon</p>
+            </div>
+            <div class="product">
+                <img src="paneer.png" alt="Paneer" onerror="this.style.display='none';">
+                <h3>Paneer</h3>
+                <p>Coming Soon</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="order-section">
+        <h2>Place Your Order</h2>
+        <div class="order-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <input type="text" id="address" placeholder="Address" required>
+            
+            <select id="product">
+                <option value="Fresh Milk">Fresh Milk</option>
+                <option value="Desi Ghee" disabled>Desi Ghee (Coming Soon)</option>
+                <option value="Paneer" disabled>Paneer (Coming Soon)</option>
+            </select>
+            
+            <select id="quantity">
+                <option value="1">1 Litre</option>
+                <option value="2">2 Litres</option>
+                <option value="5">5 Litres</option>
+            </select>
+            
+            <select id="subscription">
+                <option value="One Time Order">One Time Order</option>
+                <option value="Daily Delivery">Daily Delivery</option>
+                <option value="Alternate Day">Alternate Day</option>
+                <option value="Weekly">Weekly</option>
+            </select>
+            
+            <button type="button" onclick="placeOrder()">Place Order</button>
+            
+            <a id="upiBtn" href="upi://pay?pa=lalitnagar@ptyes&pn=AMRAT%20DAIRY&cu=INR" class="upi-pay">
+                Pay via UPI
+            </a>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>📞 9761154079</p>
+        <br>
+        <a href="https://wa.me/919761154079" class="btn" target="_blank">WhatsApp Us</a>
+    </section>
+
+    <footer>
+        © 2026 AMRAT DAIRY
+    </footer>
+
+    <div id="successPopup" class="popup">
+        <div class="popup-box">
+            <h3>Order Successful 🎉</h3>
+            <p>Your milk order request has been sent.</p>
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        // Menu Toggle Logic
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        }
+
+        // Popup Logic
+        function closePopup() {
+            document.getElementById("successPopup").style.display = "none";
+        }
+
+        // Place Order Logic
+        var pricePerLitre = 60;
+
+        function placeOrder() {
+            var name = document.getElementById("name").value;
+            var phone = document.getElementById("phone").value;
+            var address = document.getElementById("address").value;
+            var product = document.getElementById("product").value;
+            var quantity = document.getElementById("quantity").value;
+            var subscription = document.getElementById("subscription").value;
+
+            // Basic validation
+            if(name === "" || phone === "" || address === "") {
+                alert("Please fill your Name, Phone, and Address properly.");
+                return;
+            }
+
+            var total = quantity * pricePerLitre;
+            var orderID = "AMRAT" + Math.floor(Math.random() * 10000);
+
+            // WhatsApp Message Formatting
+            var message = "New Milk Order%0A%0A"
+                + "Order ID: " + orderID + "%0A"
+                + "Name: " + name + "%0A"
+                + "Phone: " + phone + "%0A"
+                + "Product: " + product + "%0A"
+                + "Quantity: " + quantity + " Litre%0A"
+                + "Subscription: " + subscription + "%0A"
+                + "Total: ₹" + total + "%0A"
+                + "Address: " + address;
+
+            var whatsapp = "https://wa.me/919761154079?text=" + message;
+            
+            // Open WhatsApp
+            window.open(whatsapp, "_blank");
+
+            // Update UPI Link with Total Amount dynamically
+            var upi = "upi://pay?pa=lalitnagar@ptyes&pn=AMRAT%20DAIRY&am=" + total + "&cu=INR";
+            document.getElementById("upiBtn").href = upi;
+
+            // Show Success Popup
+            document.getElementById("successPopup").style.display = "flex";
+        }
+    </script>
+</body>
+  </html>
+          
