@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amrat Dairy | Premium Village Milk</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Amrat Dairy" onerror="this.style.display='none'; document.getElementById('text-logo').style.display='block';">
+            <h2 id="text-logo" style="display:none; color: var(--accent); font-family: 'Playfair Display', serif;">Amrat Dairy</h2>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav id="menu">
+            <div class="close-btn" onclick="toggleMenu()">✕</div>
+            <a href="#" onclick="toggleMenu()">Home</a>
+            <a href="#about" onclick="toggleMenu()">Our Story</a>
+            <a href="#products" onclick="toggleMenu()">Products</a>
+            <a href="#order" onclick="toggleMenu()" class="nav-btn">Order Now</a>
+            <a href="#" onclick="openLoginModal()" class="login-btn">👤 Login</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+            <p class="subtitle">100% Pure & Untouched</p>
+            <h1>Farm Fresh Milk,<br>Delivered to You.</h1>
+            <p>Experience the rich taste of nature from Village Jirauli directly to your glass.</p>
+            <a href="#order" class="btn btn-primary">Start Your Subscription</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-box">
+            <div class="icon">🌿</div>
+            <h3>100% Natural</h3>
+            <p>No preservatives or chemicals.</p>
+        </div>
+        <div class="feature-box">
+            <div class="icon">⏱️</div>
+            <h3>Farm to Glass</h3>
+            <p>Delivered fresh within hours of milking.</p>
+        </div>
+        <div class="feature-box">
+            <div class="icon">🔬</div>
+            <h3>Lab Tested</h3>
+            <p>Ensuring the highest standards of hygiene.</p>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2>Our Heritage</h2>
+            <div class="divider mx-auto"></div>
+            <p>
+                <strong>AMRAT DAIRY</strong> is more than just a brand; it's a promise of purity from the heart of Village Jirauli, District Bulandshahr, Uttar Pradesh. We believe in traditional dairy practices combined with modern hygiene standards to provide your family with the healthiest milk possible.
+            </p>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <h2>Our Pure Offerings</h2>
+        <div class="divider mx-auto"></div>
+        <div class="products-container">
+            <div class="product-card">
+                <img src="fresh.png" alt="Fresh Milk" onerror="this.src='https://via.placeholder.com/150/ffffff/1e392a?text=Milk'">
+                <h3>Farm Fresh Milk</h3>
+                <p class="price">₹60 / Litre</p>
+            </div>
+            <div class="product-card coming-soon">
+                <img src="desi.png" alt="Desi Ghee" onerror="this.src='https://via.placeholder.com/150/ffffff/1e392a?text=Ghee'">
+                <h3>Pure Desi Ghee</h3>
+                <p class="status">Launching Soon</p>
+            </div>
+            <div class="product-card coming-soon">
+                <img src="panir.png" alt="Paneer" onerror="this.src='https://via.placeholder.com/150/ffffff/1e392a?text=Paneer'">
+                <h3>Fresh Paneer</h3>
+                <p class="status">Launching Soon</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="order-section">
+        <div class="order-container">
+            <h2>Place Your Order</h2>
+            <p>Fill out the details to get fresh milk delivered.</p>
+            
+            <form class="order-form" id="milkOrderForm" name="google-sheet">
+                
+                <input type="hidden" name="TotalAmount" id="hiddenTotal" value="60">
+                <input type="hidden" name="OrderID" id="hiddenOrderID" value="">
+
+                <div class="form-section-title">1. Delivery Details</div>
+                <div class="input-group">
+                    <input type="text" name="Name" id="name" placeholder="Full Name" required>
+                    <input type="tel" name="Phone" id="phone" placeholder="Phone Number" required pattern="[0-9]{10}">
+                </div>
+                <input type="text" name="Address" id="address" placeholder="Complete Delivery Address" required>
+                
+                <div class="form-section-title">2. Order Details</div>
+                <div class="input-group">
+                    <select name="Product" id="product" onchange="calculateTotal()">
+                        <option value="Fresh Milk" data-price="60">Fresh Milk (₹60/L)</option>
+                    </select>
+                    
+                    <select name="Quantity" id="quantity" onchange="calculateTotal()">
+                        <option value="1">1 Litre</option>
+                        <option value="2">2 Litres</option>
+                        <option value="3">3 Litres</option>
+                        <option value="5">5 Litres</option>
+                    </select>
+                </div>
+                
+                <select name="Subscription" id="subscription">
+                    <option value="One Time Order">One Time Order</option>
+                    <option value="Daily Delivery">Daily Delivery (Recommended)</option>
+                    <option value="Alternate Day">Alternate Day Delivery</option>
+                </select>
+
+                <div class="form-section-title">3. Payment Method</div>
+                <div class="payment-methods">
+                    <label class="payment-card">
+                        <input type="radio" name="PaymentMode" value="COD" checked>
+                        <div class="payment-details">
+                            <span class="pay-icon">💵</span>
+                            <span class="pay-text">Cash on Delivery</span>
+                        </div>
+                    </label>
+                    
+                    <label class="payment-card">
+                        <input type="radio" name="PaymentMode" value="UPI">
+                        <div class="payment-details">
+                            <span class="pay-icon">📱</span>
+                            <span class="pay-text">Pay via UPI</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="price-calculator">
+                    Total Amount: <span id="totalPriceDisplay">₹60</span>
+                </div>
+                
+                <button type="submit" class="btn btn-primary full-width" id="submitBtn">Confirm Order</button>
+            </form>
+        </div>
+    </section>
+
+    <footer id="contact" class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h2 style="font-family: 'Playfair Display', serif; color: var(--accent);">Amrat Dairy</h2>
+                <p>Pure, Fresh, and Local.</p>
+                <p class="fssai">FSSAI: [Your No. Here]</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>📞 +91 9761154079</p>
+                <p>📍 Village Jirauli, Bulandshahr, UP</p>
+            </div>
+            <div class="footer-hours">
+                <h3>Delivery Hours</h3>
+                <p>Morning: 6:00 AM - 9:00 AM</p>
+                <p>Evening: 5:00 PM - 8:00 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Amrat Dairy. All Rights Reserved.
+        </div>
+    </footer>
+
+    <div id="successPopup" class="popup">
+        <div class="popup-box">
+            <div class="popup-icon">✔️</div>
+            <h3 id="successTitle">Order Confirmed!</h3>
+            <p id="successMessage">Your order has been saved successfully.</p>
+            <button class="btn btn-primary" onclick="closePopup('successPopup')">Close</button>
+        </div>
+    </div>
+
+    <div id="loginModal" class="login-modal">
+        <div class="login-box">
+            <span class="close-login" onclick="closePopup('loginModal')">✕</span>
+            <h2>Welcome Back</h2>
+            <p>Login to manage your milk subscription</p>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="input-group-login">
+                    <span class="country-code">+91</span>
+                    <input type="tel" id="loginPhone" placeholder="Enter Mobile Number" pattern="[0-9]{10}" required>
+                </div>
+                <button type="submit" class="btn btn-primary full-width" id="otpBtn">Get OTP</button>
+            </form>
+            <p class="login-footer">New to Amrat Dairy? <a href="#order" onclick="closePopup('loginModal')">Order Now</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Menu Toggle
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("show");
+        }
+
+        // Live Price Calculator
+        function calculateTotal() {
+            let qty = document.getElementById("quantity").value;
+            let total = qty * 60; 
+            document.getElementById("totalPriceDisplay").innerText = "₹" + total;
+            document.getElementById("hiddenTotal").value = total; // Update hidden input for Google Sheets
+        }
+        window.onload = calculateTotal;
+
+        // ==========================================
+        // GOOGLE SHEETS & ORDER SUBMISSION LOGIC
+        // ==========================================
+        
+        // Yahan par aap apni Google Sheet App Script ka link dalenge
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyqtOYMvXQGWbtRJbqgCZdrZl4FWfKgukgIr5hN6XMqKoUlOWiVKLvjGeegEhh1_04i/exec'; 
+        const form = document.forms['google-sheet'];
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            
+            let btn = document.getElementById("submitBtn");
+            let originalText = btn.innerText;
+            btn.innerText = "Processing Order...";
+            btn.style.opacity = "0.7";
+            btn.disabled = true;
+
+            // Generate Order ID
+            let orderID = "AMRAT" + Math.floor(Math.random() * 100000);
+            document.getElementById("hiddenOrderID").value = orderID;
+
+            let total = document.getElementById("hiddenTotal").value;
+            let paymentMode = document.querySelector('input[name="PaymentMode"]:checked').value;
+
+            /* * [NOTE] 
+             * Jab aap Google Sheet URL laga lenge, tab ye neechay wala code chalega.
+             * Abhi testing ke liye hum direct success wala hissa chala rahe hain.
+             */
+
+            // DEMO SUBMISSION (Remove this setTimeout block when you add Google Sheet Link)
+            setTimeout(() => {
+                handleSuccess(paymentMode, total, orderID);
+                btn.innerText = originalText;
+                btn.style.opacity = "1";
+                btn.disabled = false;
+            }, 1500);
+
+            /* REAL SUBMISSION (Uncomment this when you add the Google Sheet Link above)
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    handleSuccess(paymentMode, total, orderID);
+                    btn.innerText = originalText;
+                    btn.style.opacity = "1";
+                    btn.disabled = false;
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    alert("Something went wrong. Please try again.");
+                    btn.innerText = originalText;
+                    btn.style.opacity = "1";
+                    btn.disabled = false;
+                });
+            */
+        });
+
+        function handleSuccess(paymentMode, total, orderID) {
+            if(paymentMode === "UPI") {
+                // Open UPI App automatically
+                let upiLink = "upi://pay?pa=lalitnagar@ptyes&pn=AMRAT%20DAIRY&am=" + total + "&cu=INR&tr=" + orderID;
+                document.getElementById("successTitle").innerText = "Redirecting to UPI...";
+                document.getElementById("successMessage").innerText = "Please complete the payment on your UPI app.";
+                document.getElementById("successPopup").style.display = "flex";
+                
+                // Redirect after showing message briefly
+                setTimeout(() => {
+                    window.location.href = upiLink;
+                }, 1000);
+            } else {
+                // COD Success Message
+                document.getElementById("successTitle").innerText = "Order Confirmed! 🎉";
+                document.getElementById("successMessage").innerText = "Your order (ID: " + orderID + ") will be delivered soon and you can pay on delivery.";
+                document.getElementById("successPopup").style.display = "flex";
+            }
+        }
+
+        // General Popups
+        function closePopup(popupId) {
+            document.getElementById(popupId).style.display = "none";
+            if(popupId === 'successPopup') {
+                form.reset();
+                calculateTotal();
+            }
+        }
+
+        function openLoginModal() {
+            document.getElementById("loginModal").style.display = "flex";
+            if(window.innerWidth <= 768) { document.getElementById("menu").classList.remove("show"); }
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            // ... (rest of your login code remains same) ...
+        }
+    </script>
+</body>
+  </html>
+  
