@@ -258,7 +258,8 @@
             let paymentMode = document.querySelector('input[name="PaymentMode"]:checked').value;
 
             // Send data to Google Sheets
-            fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors'})
+            fetch(scriptURL, { method: 'POST', body: new FormData(document.getElementById('milkOrderForm')) })
+            
         
                 .then(response => {
                     handleSuccess(paymentMode, total, orderID);
