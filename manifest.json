@@ -1,0 +1,21 @@
+{
+  "name": "Amrat Dairy",
+  "short_name": "Amrat Dairy",
+  "description": "Premium Village Milk Delivery",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fdfbf7",
+  "theme_color": "#122c1b",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
